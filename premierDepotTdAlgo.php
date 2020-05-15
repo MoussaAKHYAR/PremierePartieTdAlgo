@@ -338,3 +338,87 @@ Debut
 Fin
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
+Programme exo16
+Variables a,b,q,i :entier
+
+Debut
+  Afficher("Entrer les valeurs a et b")
+  lire(a,b)
+  i <- a
+  q <- 0
+  tantque i >= b faire
+    q <- q+1
+    i <- i - b
+  finTanque
+  Afficher(a,"divise par ",b,"par soustraction successive est :",q,"et le reste est : "i)
+Fin
+----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+Programme exo19
+Variables prixArticle, som, rep :entier
+
+Debut
+  Repeter
+    Afficher("entrer le prix de l'article")
+    lire(prixArticle)
+    si(prixArticle mod 10 = 0 et prixArticle >=10) alors
+      som <- som + prixArticle
+      sinon
+        Afficher("verifier le prix saisi")
+    finsi
+    Afficher("voulez vous saisir un autre prix d'article ? tapez 1 sui oui et 0 si non")
+    lire(rep)
+  jusqu'a(rep = 0 )
+
+Fin
+--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+Programme exo20
+Variables tableau tab[10]: entier
+          i,j,rang,max :entier
+
+Debut
+  Pour i <- 1 à 10 faire
+    Afficher("saisir un nombre")
+    lire(tab[i])
+  Finpour
+  Pour i <- 1 à 9 faire
+    rang <- i
+    max <- tab[rang]
+    Pour j <- i+1 à 10 faire
+      si(tab[j] > tab[i])
+        max <- tab[j]
+        rang <- j
+      fsi
+      j <- n
+    fpour
+  Fpour
+  Afficher("le plus grand nombre des 10 valeurs est : ",max,"de rang",rang)
+Fin
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+Programme exo21
+Variables n,a,t :entier
+Debut
+  Afficher("saisir un nombre")
+  lire(n)
+  Afficher("devinne le nombre")
+  lire(a)
+  t <- 1
+  tantque(a <> n) faire
+  si(a>n) alors
+      Afficher("plus grand")
+  sinon 
+      Afficher("plus petit")
+  finsi
+  t <- t+1
+  Afficher("devinne le nombre ",t," eme tentative")
+  lire(a)
+  fintanque
+Fin
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+Programme exo22
+
+
+
