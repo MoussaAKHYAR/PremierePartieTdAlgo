@@ -338,6 +338,40 @@ Debut
 Fin
 ------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
+Programme exo15
+Var n,i,som   :entier
+
+Debut
+  Afficher("saisir un nombre de depart")
+  lire(n)
+  i <- 1
+  som <- 0
+  tq (i <= n) faire
+    som <- som +i
+    i <- i+1
+  ftq
+  Afficher("la somme des valeurs comprises entre 1 et le nombre saisit est :",som)
+Fin
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+Programme exo15Moyenne
+Var n,i,som  :entier
+    moy      :reel
+
+Debut
+  Afficher("saisir un nombre de depart")
+  lire(n)
+  i <- 1
+  som <- 0
+  tq (i <= n) faire
+    som <- som +i
+    i <- i+1
+  ftq
+  moy <- som/n
+  Afficher("la moyenne des valeurs est :",moy
+Fin
+------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 Programme exo16
 Variables a,b,q,i :entier
 
@@ -394,7 +428,7 @@ Debut
     fpour
   Fpour
   Afficher("le plus grand nombre des 10 valeurs est : ",max,"de rang",rang)
-Fin
+Fincccc
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 Programme exo21
