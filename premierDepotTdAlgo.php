@@ -524,6 +524,28 @@ Debut
 Fin
 ----------------------------------------------------------------------------
 ----------------------------------------------------------------------------
+Programme exo25
+Variables i,j,n :entiers
+Debut
+  Pour i <- 1 à 10 faire
+    Afficher("\n")
+    Pour j <- 1 à i faire
+        Afficher(i)
+    finpour
+  finpour
+Afficher("------------------------------------------------------------------")
+Afficher("saisir un nombre")
+lire(n)
+pour i <- 1 à n faire
+  si(n mod i = 0)alors
+      cpt <- cpt + 1
+  finsi
+finpour
+si(cpt = 2)alors
+  Afficher("le nombre ",n," est premier")
+finsi
+
+Fin
 Programme exo26
 Variables n,croissant,decroissant,rep,t,p :entiers
 
