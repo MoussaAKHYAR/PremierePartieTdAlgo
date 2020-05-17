@@ -388,6 +388,59 @@ Debut
 Fin
 ----------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------
+Programme exo17
+Variables a, b, c, resu, pgcd,e,d : entiers
+
+Début
+  Répéter
+		Ecrire (" entrer les valeurs de a et b")
+		Lire (a,b)
+  Jusqu’à a>0 ET b>0
+  e <-- a
+  d <-- b
+	Pgcd  ← 0
+	resu ← 0
+	TantQue (a<>b)
+		SI(b>a) Alors
+    c←a
+    a←b
+    b←c
+    FinSi
+		resu ← a-b
+		a ←b
+		b ← resu
+		pgcd ← a
+	FinTantQue
+  Ecrire("le pgcd de", e ," et ", d ," est : ", pgcd)
+Fin
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+Programme exo18PPCM
+Variables a, b, c, resu, pgcd , ppcm,e,d: entiers
+Début
+  Répéter
+		Ecrire (" entrer les valeurs de a et b")
+		Lire (a,b)
+  Jusqu’à a>0 ET b>0
+	Pgcd  ← 0
+	resu ← 0
+	TantQue (a<>b)
+		SI(b>a) Alors
+    c←a
+    a←b
+    b←c
+    FinSi
+		resu ← a-b
+		a ←b
+		b ← resu
+		pgcd ← a
+	FinTantQue
+  Ecrire("le pgcd de", e ," et ", d ," est : ", pgcd)
+  ppcm ← e*d/pgcd
+  Ecrire ("le ppcm de", e ," et ", d ," est : ", ppcm)
+Fin
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 Programme exo19
 Variables prixArticle, som, rep :entier
 
@@ -403,7 +456,6 @@ Debut
     Afficher("voulez vous saisir un autre prix d'article ? tapez 1 sui oui et 0 si non")
     lire(rep)
   jusqu'a(rep = 0 )
-
 Fin
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
@@ -428,10 +480,30 @@ Debut
     fpour
   Fpour
   Afficher("le plus grand nombre des 10 valeurs est : ",max,"de rang",rang)
-Fincccc
+Fin
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 Programme exo21
+Variables a,b : entiers
+
+Début
+    Écrire ("Enter la valeur du premier utilisateur A : ")
+    Lire (a)
+    Écrire ("Enter la valeur du deuxième utilisateur B : ")
+    Lire (b)
+    si(a = b)
+    Ecrire("Bravo vous avez deviné le nombre!")
+      Sinon
+        Si(a > b)
+          Ecrire("Entrer un nombre plus petit")
+        Sinon
+          Ecrire("Entrer un nombre plus grand")
+        FinSi
+    FinSi
+FIN
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+Programme exo24
 Variables n,a,t :entier
 Debut
   Afficher("saisir un nombre")
@@ -442,7 +514,7 @@ Debut
   tantque(a <> n) faire
   si(a>n) alors
       Afficher("plus grand")
-  sinon 
+  sinon
       Afficher("plus petit")
   finsi
   t <- t+1
@@ -452,7 +524,43 @@ Debut
 Fin
 ----------------------------------------------------------------------------
 ----------------------------------------------------------------------------
-Programme exo22
+Programme exo26
+Variables n,croissant,decroissant,rep,t,p :entiers
+
+Debut
+  rep <-- 1
+  croissant <-- 0
+  decroissant <-- 0
+  tantque(rep = 1)faire
+    t <-- 1
+    p <-- 0
+    Afficher("Entrer une valeur")
+    lire(n)
+    si(n>=p)alors
+      p <-- n
+      croissant <-- croissant+1
+    finsi
+    si(n<p)
+      p <-- n
+      decroissant <-- decroissant + 1
+    finsi
+    Afficher("saisir 1 si vouz voulez encore saisir")
+    lire(rep)
+    t <-- t+1
+  fintantque
+  si(t = croissant)alors
+    Afficher("les valeurs saisies sont dans l'ordre croissant")
+    sinon
+    si(t = decroissant)alors
+        Afficher("les valeurs saisies sont dans l'ordre decroissant")
+      sinon
+        Afficher("les valeurs saisies sont dans l'ordre quelconque")
+    finsi
+  finsi
+Fin
+
+
+
 
 
 
