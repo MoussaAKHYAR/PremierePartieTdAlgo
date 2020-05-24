@@ -188,7 +188,7 @@ Debut
 
   si(ha>hd) alors
     dha <- ha - hd
-    dma <- ma + md
+    dma <- ma - md
     si(dma >= 60)alors
       dha <- dha + 1
       dma <- dma - 60
@@ -460,26 +460,20 @@ Fin
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
 Programme exo20
-Variables tableau tab[10]: entier
-          i,j,rang,max :entier
+Variables   i,pos,max :entier
 
 Debut
+  max = 0
+  pos = 0
   Pour i <- 1 à 10 faire
     Afficher("saisir un nombre")
-    lire(tab[i])
+    lire(n)
+    si(i = 1 ou n > max) alors
+    max = n
+    pos = i
   Finpour
-  Pour i <- 1 à 9 faire
-    rang <- i
-    max <- tab[rang]
-    Pour j <- i+1 à 10 faire
-      si(tab[j] > tab[i])
-        max <- tab[j]
-        rang <- j
-      fsi
-      j <- n
-    fpour
-  Fpour
-  Afficher("le plus grand nombre des 10 valeurs est : ",max,"de rang",rang)
+ 
+  Afficher("le plus grand nombre des 10 valeurs est : ",max,"de rang",pos)
 Fin
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
@@ -501,6 +495,38 @@ Début
         FinSi
     FinSi
 FIN
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+Programme exo22
+variables N,i,pos,seqencours,maxsequence :entier
+          tableau tab[100]:entier
+
+Debut
+  Repeter
+    Afficher("entrer N entiers différent compris entre 10 et 50")
+    lire(N)
+  jusqua(N >= 10 ET N <= 50)
+  Pour i <-- 1 à N faire
+    Afficher("Entrer une valeur")
+    lire(val)
+  finpour
+  pos <= 0
+  sequencours <= 1
+  maxsequence <= 0
+  Pour i <- 1 à N faire
+    si(tab[i] < tab[i+1])alors
+    sequencours <= sequencours + 1
+      si(sequencours > maxsequence ) alors
+        maxsequence = sequencours
+        pos = (i + 1)-maxsequence+1
+      finsi
+      sinon
+        sequencours <= 1
+    finsi
+  Finpour
+Fin
+
+
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 Programme exo24
@@ -544,8 +570,9 @@ finpour
 si(cpt = 2)alors
   Afficher("le nombre ",n," est premier")
 finsi
-
 Fin
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 Programme exo26
 Variables n,croissant,decroissant,rep,t,p :entiers
 
